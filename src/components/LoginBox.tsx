@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { browserHistory } from 'react-router';
 import './LoginBox.css';
 
 interface State {
@@ -59,8 +60,9 @@ class LoginBox extends React.Component {
   }
 
   login(): void {
-    if (this.state.username !== '' && this.state.password !== '')
-      this.context.history.push('/service');
+    if (this.state.username !== '' && this.state.password !== '') {
+      browserHistory.push('/service');
+    }
   }
 }
 
