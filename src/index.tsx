@@ -4,12 +4,12 @@ import 'jquery';
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 
-import App from './App';
+import { AppRouter } from './router';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <AppRouter />,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
