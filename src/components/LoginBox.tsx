@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { browserHistory } from 'react-router';
+import axios from 'axios';
 import './LoginBox.css';
 
 interface State {
@@ -61,7 +62,15 @@ class LoginBox extends React.Component {
 
   login(): void {
     if (this.state.username !== '' && this.state.password !== '') {
-      browserHistory.push('/service');
+      axios.get(" http://localhost:3004/users")
+      .then(users => {
+        let user: any = users.data[0];
+        if (user.name === this.state.username && user.password === this.state.password)
+          browserHistory.push('/service');
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
     }
   }
 }
