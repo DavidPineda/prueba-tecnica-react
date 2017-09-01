@@ -62,7 +62,7 @@ class LoginBox extends React.Component {
 
   login(): void {
     if (this.state.username !== '' && this.state.password !== '') {
-      axios.get(" http://localhost:3004/users")
+      axios.get("http://localhost:3004/users")
       .then(users => {
         let user: any = users.data[0];
         if (user.name === this.state.username && user.password === this.state.password)

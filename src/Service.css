@@ -2,4 +2,11 @@
   border: 1px solid #2bbbad;
   border-radius: 15px;
   margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.map-box {
+  width: 90%;
+  height: 400px;
+  margin: 0 auto;
 }
